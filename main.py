@@ -285,6 +285,9 @@ class Ui_MainWindow(QWidget):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "vr5.2错误姿势识别"))
         self.pushButton_3.setText(_translate("MainWindow", "上传文件"))
+
+        self.pushButton_pic2.setText(_translate("MainWindow", "上传检测图片"))
+
         self.pushButton_4.setText(_translate("MainWindow", "姿态识别"))
         self.label_3.setText(_translate("MainWindow", "Input Image"))
         self.label_11.setText(_translate("MainWindow", "OutPut Image"))
