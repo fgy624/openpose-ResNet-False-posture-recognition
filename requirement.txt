@@ -1,0 +1,6 @@
+tensorflow
+configobj
+scipy
+PyQt5
+keras
+opencv-python
