@@ -110,12 +110,6 @@ class Ui_MainWindow(QWidget):
         self.pushButton_4.clicked.connect(self.excute)  ##开辟线程，处理图片
 
 
-
-
-
-
-
-
         self.groupBox_4 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_4.setGeometry(QtCore.QRect(60, 110, 1051, 321))
         self.groupBox_4.setStyleSheet("")
@@ -336,6 +330,24 @@ class Ui_MainWindow(QWidget):
                 self.ImageSizeError()
             else:
                 self.pushButton_4.setDisabled(False)
+
+    
+    def upload_pic2(self):##上传图像，并检测图片尺寸，尺寸应小于1000*1000
+        imgName, imgType = QFileDialog.getOpenFileName(self, "打开图片", "", "*.jpg;;*.png;;All Files(*)")
+        if imgName=='':##关闭文件夹则pass（即文件为空）
+            pass
+        else:
+            self.uploadimg=imgName
+            jpg = QtGui.QPixmap(imgName).scaled(self.label_13.width(), self.label_13.height())
+            self.label_13.setPixmap(jpg)
+            img = self.cv_imread()
+            if img.shape[0]>1000 or img.shape[1]>1000:
+                self.pushButton_pic2.setDisabled(True)
+                self.ImageSizeError()
+            else:
+                self.pushButton_pic2.setDisabled(False)
+
+
     def ImageSizeError(self):##图片过大弹窗
         QMessageBox.critical(self,"错误","图片过大，请重新上传",QMessageBox.Yes|QMessageBox.No,QMessageBox.Yes)
     def ImageEmptyError(self):##图片为空警告
