@@ -247,8 +247,10 @@ class Processer:
             X = candidate[index.astype(int), 1]
             cv2.putText(canvas,str(n+1),(int(Y[0]),int(X[0]-5)),cv2.FONT_HERSHEY_SIMPLEX,1.5,(68,255, 51),5)
         person_count = len(subset)
-        cv2.imwrite("only_Pose.png", only_Pose)
-        cv2.imwrite("result.png", canvas)
+        cv2.imwrite("only_Pose_" + self.input_image.split('/')[-1][:-4] + ".png", only_Pose)
+        cv2.imwrite("result_" + self.input_image.split('/')[-1][:-4] + ".png", canvas)
+        
+
         return canvas,person_count
 
     def Pose(self,Img_path):
