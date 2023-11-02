@@ -56,14 +56,6 @@ class Ui_MainWindow(QWidget):
         self.pushButton_3.setGeometry(QtCore.QRect(160, 20, 191, 91))
         
 
-
-        # 上传第二张图片原图
-        self.pushButton_pic2 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_pic2.setGeometry(QtCore.QRect(400, 20, 60, 91))
-
-
-
-
         font = QtGui.QFont()
         font.setFamily("华文楷体")
         font.setPointSize(20)
@@ -78,6 +70,27 @@ class Ui_MainWindow(QWidget):
 "font:bold;")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.clicked.connect(self.upload)  ##上传图片
+
+
+
+
+        # 上传第二张图片原图
+        self.pushButton_pic2 = QtWidgets.QPushButton(self.groupBox_3)
+        self.pushButton_pic2.setGeometry(QtCore.QRect(400, 20, 60, 91))
+        font = QtGui.QFont()
+        font.setFamily("华文楷体")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.pushButton_pic2.setFont(font)
+        self.pushButton_pic2.setStyleSheet("border-radius:10px;\n"
+"color:#3C3F41;\n"
+"font: 20pt \"华文楷体\";\n"
+"background:white;\n"
+"font:bold;")
+        self.pushButton_pic2.setObjectName("pushButton_pic2")
+
 
         self.pushButton_4 = QtWidgets.QPushButton(self.groupBox_3)
         self.pushButton_4.setGeometry(QtCore.QRect(540, 20, 191, 91))
@@ -95,6 +108,13 @@ class Ui_MainWindow(QWidget):
 "font:bold;")
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_4.clicked.connect(self.excute)  ##开辟线程，处理图片
+
+
+
+
+
+
+
 
         self.groupBox_4 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_4.setGeometry(QtCore.QRect(60, 110, 1051, 321))
